@@ -1,3 +1,7 @@
+# Построение графика функции
+# Потенко Максим М8О-307Б
+# Функция r = a * (1 - cos(phi))
+
 import cv2
 import numpy as np
 import math
@@ -167,8 +171,14 @@ if __name__ == "__main__":
     but = Button(root, text="График", background="#555", foreground="#ccc", padx="20", pady="8", font="16", command=button_ev)
     but.place(x=0,y=0)
     root.update()
+    tex = Text(root, state=DISABLED)
+# Текстовая подпись
+    tex.config(state=NORMAL, font="16", height=3, width=36)
+    tex.insert(END, 'График:r = a * (1 - sin(phi))\nВведите параметр a')
+    # tex.pack()
+    tex.place(x = 0,y= but.winfo_height())
 # Поле для ввода текста
-    text_box = Entry(root, bd =5,width=20, font="16", background="#555", foreground="#ccc")
+    text_box = Entry(root, bd =8,width=20, font="16", background="#555", foreground="#ccc")
     text_box.place(x = but.winfo_width(), y=0)
 
 # Ожидание события
